@@ -1,0 +1,16 @@
+<div id="introduction">
+  <p>
+    This is a list of all available tests.
+  </p>
+</div>
+<ul class="test-groups">
+  <% @test_groups.each do |group, tests| %>
+  <li><%= tests[0] %>
+    <ul class="test-list">
+    <% tests[1].each do |test, title| %>
+      <li><a href="<%= "/tests/#{group}/#{test}" %>"><%= title %></a></li>
+    <% end %>
+    </ul>
+  </li>
+  <% end %>
+</ul>
