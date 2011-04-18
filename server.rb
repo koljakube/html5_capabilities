@@ -11,9 +11,13 @@ TEST_GROUPS = {
   general: ["General", {
     js_test: "JavaScript Test",
   }],
-  capture_api: ["The Capture API", {
+  capture_api: ["Capture API", {
     capture: "Capture Interface",
   }],
+  geolocation_api: ["Geolocation API", {
+    availability: "Show Availability",
+    current_position: "Get Current Position",
+  }]
 }
 
 

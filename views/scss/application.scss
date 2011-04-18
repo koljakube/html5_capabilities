@@ -11,7 +11,7 @@ body {
 
 #wrap {
   width: 250px;
-  background: white;
+  background-color: #f5f5f5;
   margin: 20px auto;
   padding: 10px;
   border: 1px solid black;
@@ -25,10 +25,10 @@ body {
       font-weight: bold;
     }
     ul.test-list {
-      margin-top: -10px;
       margin-left: 10px;
       
       li {
+        margin-top: 5px;
         font-weight: normal;
       }
     }
@@ -93,4 +93,51 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+p {
+  margin-top: 5px;
+}
+
+pre {
+  overflow: scroll;
+  font-family: monospace;
+  margin: 10px 0;
+  padding: 3px;
+  background: #e5e5e5;
+  
+  &.error {
+    background: #ff8094;
+  }
+}
+
+.pseudo-button {
+  font-weight: bold;
+  text-shadow: 0px 1px 1px #e0e0e0;
+  background: #efefef;
+  padding: 10px;
+  margin: 20px 10px 10px 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #303030;
+}
+
+.instructions {
+  font-style: italic;
+  text-align: justify;
+}
+
+.success {
+  color: black;
+  background: #81d072;
+  padding: 3px;
+  margin: 5px 0px;
+  border-radius: 3px;
+}
+.failure {
+  color: black;
+  background: #ff8094;
+  margin: 5px 0px;
+  padding: 3px;
+  border-radius: 3px;
 }

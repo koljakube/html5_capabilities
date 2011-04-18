@@ -1,3 +1,9 @@
+success = (data) ->
+  for i in data
+    $('#capture').append('<img src="' + i.uri + '" />')
+
+error = (err) ->
+  alert(err.message + " (" + err.code + ")")
+
 $ ->
-  $('#capture').text("Hello, World!")
-  $('#capture').click -> $(this).text('Goodbye, World!')
+  navigator.device.captureImage(success, error, { maxNumberOfMediaFiles: 1 })

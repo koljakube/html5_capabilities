@@ -1,2 +1,2 @@
 $ ->
-  $('#click-me').click -> $(this).text("JavaScript works!")
+  $('#click-me').click -> $('#result').addClass('success').text("JavaScript works!")
