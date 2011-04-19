@@ -75,7 +75,7 @@ get '/tests/:group/:test', :agent => /(.*)/ do |group, test|
   erb :"erb/#{group}/#{test}"
 end
 
-post '/tests/:group/:text', :agent => /(.*)/ do |group, test|
+post '/tests/:group/:test', :agent => /(.*)/ do |group, test|
   require_relative("controllers/#{group}_controller")
   @controller = Object.const_get("#{group.camelcase}Controller").new(params)
   @iphone = true if /iPhone/.match params[:agent].first
