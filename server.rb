@@ -39,6 +39,7 @@ before do
   @show_back_link = false
   @javascripts = %w{
     /jquery/jquery-1.5.2.js
+    /jquery/jquery.json-2.2.js
     /javascripts/common.js
   }
   @stylesheets = []
@@ -59,6 +60,22 @@ get '/', :agent => /(.*)/ do
 end
 
 get '/tests/:group/:test', :agent => /(.*)/ do |group, test|
+  require_relative("controllers/#{group}_controller")
+  @controller = Object.const_get("#{group.camelcase}Controller").new(params)
+  @iphone = true if /iPhone/.match params[:agent].first
+  @title, @subtitle = test_name(group, test), "(#{group_name(group)})"
+  @show_back_link = true
+  @stylesheets << "/stylesheets/#{group}.css"
+  @javascripts << "/javascripts/#{group}/#{test}.js"
+  # TODO: How to instance eval methods by name?
+  @controller.send test if @controller.respond_to? test.to_sym
+  @controller.instance_variables.each do |var|
+    self.instance_variable_set(var, @controller.instance_variable_get(var))
+  end
+  erb :"erb/#{group}/#{test}"
+end
+
+post '/tests/:group/:text', :agent => /(.*)/ do |group, test|
   require_relative("controllers/#{group}_controller")
   @controller = Object.const_get("#{group.camelcase}Controller").new(params)
   @iphone = true if /iPhone/.match params[:agent].first

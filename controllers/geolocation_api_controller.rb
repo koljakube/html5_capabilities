@@ -10,11 +10,12 @@ class GeolocationApiController < Controller
   end
   
   def watch_position_transmit
+    puts @params
     position = @params[:position]
     error = @params[:error]
-    File.open("log/geolocation_api/watch_position.log", "w") do |file|
-      file.write(position) unless position.nil?
-      file.write(error) unless error.nil?
+    File.open("log/geolocation_api/watch_position.log", "a") do |file|
+      file.write(position + "\n\n") unless position.nil?
+      file.write(error + "\n\n") unless error.nil?
     end
   end
 

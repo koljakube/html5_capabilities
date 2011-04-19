@@ -18,6 +18,13 @@ positionCallback = (position) ->
     "}</pre>")
   $
   $('html, body').animate({ scrollTop: $("#content").height() }, 'fast')
+  $.ajax({
+    type: 'POST',
+    url: '/tests/geolocation_api/watch_position_transmit',
+    data: 'position=' + $.toJSON(position),
+    success: null,
+    dataType: 'html'
+  })
 
 
 
@@ -30,6 +37,13 @@ positionErrorCallback = (error) ->
     "  message = " + error.message + "\n" +
     "}</pre>")
   $('html, body').animate({ scrollTop: $("#content").height() }, 'fast')
+  $.ajax({
+    type: 'POST',
+    url: '/tests/geolocation_api/watch_position_transmit',
+    data: 'error=' + $.toJSON(error),
+    success: null,
+    dataType: 'html'
+  })
   
 
 $ ->
