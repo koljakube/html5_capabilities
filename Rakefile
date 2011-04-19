@@ -20,10 +20,12 @@ task :generate, :group, :test do |t, args|
     return
   end
   directories = [
+    "log/#{group}",
     "views/erb/#{group}",
-    "views/coffee-script/#{group}"
+    "views/coffee-script/#{group}",
   ]
   files = [
+    "controllers/#{group}_controller.rb",
     "views/erb/#{group}/#{test}.erb",
     "views/coffee-script/#{group}/#{test}.coffee",
     "views/scss/#{group}.scss"
@@ -33,6 +35,17 @@ task :generate, :group, :test do |t, args|
   end
   files.each do |file|
     File.open(file, "w").close if not File.exists? file
+  end
+end
+
+desc "Archive all log files and remove them"
+task :clean_logs do
+  Dir.chdir(File.dirname(__FILE__))
+  Dir.chdir('log')
+  dirs = (Dir['*'] - %w{backups}).join ' '
+  system("tar -cjf backups/log-backup-#{Time.now.strftime("%Y%m%d%H%M%S")}.tar.bz2 #{dirs}")
+  Dir['*/*.log'].each do |file|
+    File.unlink file
   end
 end
 
