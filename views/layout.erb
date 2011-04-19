@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if @iphone %>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <% end %>
     <title><%= page_title %></title>
     <link rel="shortcut icon" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="stylesheet" href="/stylesheets/meyerreset.css" type="text/css" media="screen" />
+    <% if @iphone %>
+    <link rel="stylesheet" href="/stylesheets/iphone.css" type="text/css" media="screen" />
+    <% else %>
     <link rel="stylesheet" href="/stylesheets/application.css" type="text/css" media="screen" />
+    <% end %>
     <% @stylesheets.each do |sheet| %>
     <link rel="stylesheet" href="<%= sheet %>" type="text/css" media="screen" />
     <% end %>
@@ -15,11 +22,11 @@
   </head>
   <body>
     <div id="wrap">
-      <% if @show_back_link %>
       <div id="back-link">
+        <% if @show_back_link %>
         <a href="/">‹‹‹ go back to the test overview</a>
+        <% end %>
       </div>
-      <% end %>
       <div id="page-title">
         <h1><%= @title %></h1>
         <h2><%= @subtitle %></h2>

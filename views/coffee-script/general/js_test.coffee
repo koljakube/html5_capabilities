@@ -1,2 +1,3 @@
 $ ->
-  $('#click-me').click -> $('#result').addClass('success').text("JavaScript works!")
+  $('#click-me').click -> 
+    $('#result').hide().addClass('success').text("JavaScript works!").slideDown(350)

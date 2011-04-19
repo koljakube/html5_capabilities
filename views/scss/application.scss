@@ -1,7 +1,7 @@
 body {
   background: #177a99;
   color: #656565;
-  font-size: 10px;
+  font-size: 20px;
   font-family: "Verdana", "Helvetica", "Arial", sans-serif;
 }
 
@@ -10,7 +10,7 @@ body {
 }
 
 #wrap {
-  width: 250px;
+  width: 20em;
   background-color: #f5f5f5;
   margin: 20px auto;
   padding: 10px;
@@ -41,25 +41,25 @@ body {
 
 h1 {
   color: black;
-  font-size: 14px;
+  font-size: 30px;
   font-weight: bold;
   margin: 5px 0;
   
 }
 h2 {
   color: black;
-  font-size: 12px;
+  font-size: 26px;
   font-weight: bold;
   margin: 5px 0;
 }
 h3 {
   color: black;
-  font-size: 12px;
+  font-size: 26px;
   margin: 5px 0;
 }
 h4 {
   color: black;
-  font-size: 10px;
+  font-size: 20px;
   font-weight: bold;
   margin: 5px 0;
 }
@@ -100,10 +100,10 @@ p {
 }
 
 pre {
-  overflow: scroll;
+  font-size: 12px;
   font-family: monospace;
   margin: 10px 0;
-  padding: 3px;
+  padding: 5px;
   background: #e5e5e5;
   
   &.error {
@@ -112,6 +112,7 @@ pre {
 }
 
 .pseudo-button {
+  cursor: pointer;
   font-weight: bold;
   text-shadow: 0px 1px 1px #e0e0e0;
   background: #efefef;
@@ -120,24 +121,27 @@ pre {
   text-align: center;
   border-radius: 10px;
   box-shadow: 1px 1px 3px #303030;
+  -webkit-box-shadow: 1px 1px 3px #303030;
 }
 
 .instructions {
   font-style: italic;
   text-align: justify;
+  margin-bottom: 20px;
 }
 
 .success {
   color: black;
   background: #81d072;
   padding: 3px;
-  margin: 5px 0px;
+  margin: 20px 0px;
   border-radius: 3px;
 }
 .failure {
   color: black;
   background: #ff8094;
-  margin: 5px 0px;
+  margin: 20px 0px;
   padding: 3px;
   border-radius: 3px;
+  
 }

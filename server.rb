@@ -6,6 +6,8 @@ require 'erb'
 require 'sass'
 require 'coffee-script'
 
+require_relative 'lib/all'
+
 
 TEST_GROUPS = {
   general: ["General", {
@@ -17,27 +19,30 @@ TEST_GROUPS = {
   geolocation_api: ["Geolocation API", {
     availability: "Show Availability",
     current_position: "Get Current Position",
+    watch_position: "Watch Position",
   }]
 }
 
 
 def group_name(group)
-  p group
   TEST_GROUPS[group.to_sym][0]
 end
 
 def test_name(group, test)
   TEST_GROUPS[group.to_sym][1][test.to_sym]
 end
-  
+
+
 before do
   @title = "HTML5 Capability Tests"
   @subtitle = ""
   @show_back_link = false
   @javascripts = %w{
     /jquery/jquery-1.5.2.js
+    /javascripts/common.js
   }
   @stylesheets = []
+  @iphone = false
   
   instance_eval do
     def page_title
@@ -47,16 +52,25 @@ before do
 end
 
 
-get '/' do
+get '/', :agent => /(.*)/ do
+  @iphone = true if /iPhone/.match params[:agent].first
   @test_groups = TEST_GROUPS
-  erb :index
+  erb :"erb/index"
 end
 
-get '/tests/:group/:test' do |group, test|
+get '/tests/:group/:test', :agent => /(.*)/ do |group, test|
+  require_relative("controllers/#{group}_controller")
+  @controller = Object.const_get("#{group.camelcase}Controller").new(params)
+  @iphone = true if /iPhone/.match params[:agent].first
   @title, @subtitle = test_name(group, test), "(#{group_name(group)})"
   @show_back_link = true
   @stylesheets << "/stylesheets/#{group}.css"
   @javascripts << "/javascripts/#{group}/#{test}.js"
+  # TODO: How to instance eval methods by name?
+  @controller.send test if @controller.respond_to? test.to_sym
+  @controller.instance_variables.each do |var|
+    self.instance_variable_set(var, @controller.instance_variable_get(var))
+  end
   erb :"erb/#{group}/#{test}"
 end
 
@@ -64,6 +78,9 @@ get '/stylesheets/:file.css' do |file|
   scss :"scss/#{file}"
 end
 
+get '/javascripts/:file.js' do |file|
+  coffee :"coffee-script/#{file}"
+end
 get '/javascripts/:group/:test.js' do |group, test|
   coffee :"coffee-script/#{group}/#{test}"
 end

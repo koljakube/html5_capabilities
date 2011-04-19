@@ -1,5 +1,5 @@
 $ ->
   if navigator.geolocation
-    $('#result').addClass('success').text('Geolocation API is available.')
+    $('#result').hide().addClass('success').text('Geolocation API is available.').slideDown(350)
   else
-    $('#result').addClass('failure').text('Geolocation API is not available.')
+    $('#result').hide().addClass('failure').text('Geolocation API is not available.').slideDown(350)

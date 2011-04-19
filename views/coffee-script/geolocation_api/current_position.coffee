@@ -11,6 +11,7 @@ positionCallback = (position) ->
     "    speed             = " + position.coords.speed + "\n" +
     "  },\n" +
     "  timestamp = " + position.timestamp + "\n" +
+    "              (" + new Date(position.timestamp).toUTCString() + ")" + "\n" +
     "}")
   $('#current_position pre.result').slideDown(350)
 

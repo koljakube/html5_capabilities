@@ -1,0 +1,34 @@
+<p class="instructions">
+  Click the button. You will be able to see a log of all position updates.
+</p>
+<div id="clear-results" class="pseudo-button">
+  Clear results
+</div>
+  
+<div id="current_position">
+  <pre class="result"></pre>
+  <pre class="error"></pre>
+</div>
+<div id="watching-indicator" class="success">
+  Watching...
+  <div id="stop-watching" class="pseudo-button">
+    Stop
+  </div>
+</div>
+<p>
+  Locate using: <%= @a_var.inspect %>
+</p>
+<div id="buttons">
+  <div id="normal-accuracy" class="pseudo-button">
+    Normal Accuracy
+  </div>
+  <div id="high-accuracy" class="pseudo-button">
+    High Accuracy
+  </div>
+  <div id="cached-position" class="pseudo-button">
+    Cached Position
+  </div>
+  <div id="fresh-position" class="pseudo-button">
+    Fresh Position
+  </div>
+</div>
