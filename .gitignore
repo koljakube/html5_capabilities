@@ -2,3 +2,4 @@
 */.DS_Store
 log/backups/*
 log/*/*.log
+.sass-cache
