@@ -14,6 +14,7 @@ Sinatra server.
 
     git clone git://github.com/koljakube/html5_capabilities.git
     cd html5_capabilities
+    bundle install
     rake
 
 Use `rake run` if you are not on an OS X machine.
