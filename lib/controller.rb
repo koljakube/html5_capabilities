@@ -7,7 +7,7 @@ class Controller
   
   def log
     group = @params[:group]
-    test = @params[:test].sub('_transmit', '')
+    test = @params[:test].sub('_submit', '')
     File.open("log/#{group}/#{test}.log", "a") do |file|
       file.write("agent    = " + @params[:agent].first + "\n")
       old_stdout, $stdout = $stdout, file
