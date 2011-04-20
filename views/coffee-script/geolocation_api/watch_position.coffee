@@ -22,7 +22,7 @@ positionCallback = (positionOptions) ->
     $('html, body').animate({ scrollTop: $("#content").height() }, 'fast')
     $.ajax({
       type: 'POST',
-      url: '/tests/geolocation_api/watch_position_transmit',
+      url: '/tests/geolocation_api/watch_position_submit',
       data: 'position=' + $.toJSON(position) + "&options=" + $.toJSON(options),
       success: null,
       dataType: 'html'
@@ -43,7 +43,7 @@ positionErrorCallback = (positionOptions) ->
     $('html, body').animate({ scrollTop: $("#content").height() }, 'fast')
     $.ajax({
       type: 'POST',
-      url: '/tests/geolocation_api/watch_position_transmit',
+      url: '/tests/geolocation_api/watch_position_submit',
       data: 'error=' + $.toJSON(error) + "&options=" + $.toJSON(options),
       success: null,
       dataType: 'html'

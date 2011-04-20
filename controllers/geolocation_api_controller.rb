@@ -6,7 +6,7 @@ class GeolocationApiController < Controller
   def current_position
   end
   
-  def current_position_transmit
+  def current_position_submit
     log do
       puts "options  = #{@params[:positionOptions]}"
       puts "position = #{@params[:position]}" unless @params[:position].nil?
@@ -17,7 +17,7 @@ class GeolocationApiController < Controller
   def watch_position
   end
   
-  def watch_position_transmit
+  def watch_position_submit
     log do
       puts "options  = #{@params[:positionOptions]}"
       puts "position = #{@params[:position]}" unless @params[:position].nil?
