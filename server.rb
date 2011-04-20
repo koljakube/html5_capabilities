@@ -2,7 +2,6 @@
 # -*- encoding: utf-8 -*-
 
 require 'sinatra'
-require 'sinatra/reloader' if development?
 require 'erb'
 require 'sass'
 require 'coffee-script'
@@ -10,6 +9,12 @@ require 'coffee-script'
 require_relative 'lib/all'
 
 require_relative 'lib/routes'
+
+
+configure(:development) do |c|
+  require 'sinatra/reloader'
+  c.also_reload('lib/*.rb')
+end
 
 
 def group_name(group)
