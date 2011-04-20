@@ -18,6 +18,7 @@ ROUTES = {
   }],
   workers: ["Web Workers", {
     availability: "Show Availability",
-    prime: "Calculate prime numbers"
+    prime: "Calculate prime numbers",
+    prime_hardcore: "Busily calculate prime numbers",
   }]
 }

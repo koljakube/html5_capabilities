@@ -9,7 +9,7 @@ $ ->
   start = ->
     running = true
     $('#toggle-calculations').text('Stop calculations')
-    worker = new Worker('/javascripts/workers/prime_worker.js')
+    worker = new Worker('/javascripts/workers/prime_hardcore_worker.js')
     worker.onerror = (event) ->
       $('#primes').append("<p class=\"error\">Error: #{event.message}</p>")
     worker.onmessage = (event) ->
