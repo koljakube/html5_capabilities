@@ -8,6 +8,7 @@ $ ->
   
   start = ->
     running = true
+    $('#indicator').slideDown('fast')
     $('#toggle-calculations').text('Stop calculations')
     worker = new Worker('/javascripts/workers/prime_hardcore_worker.js')
     worker.onerror = (event) ->
@@ -18,6 +19,7 @@ $ ->
     stop = do (worker) ->
       ->
         running = false
+        $('#indicator').slideUp('fast')
         $('#toggle-calculations').text('Start calculations')
         worker.terminate()
         start
