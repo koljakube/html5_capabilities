@@ -1,6 +1,7 @@
 ROUTES = {
   general: ["General", {
     js_test: "JavaScript Test",
+    user_agent: "Submit User Agent",
   }],
   file_api: ['File API', {
     filelist: "FileList + FileReader",
