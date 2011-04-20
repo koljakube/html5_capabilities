@@ -3,6 +3,9 @@ ROUTES = {
     js_test: "JavaScript Test",
     user_agent: "Submit User Agent",
   }],
+  orientation: ["Device Orientation", {
+    display: "Display orientation",
+  }],
   file_api: ['File API', {
     filelist: "FileList + FileReader",
     filereadersync: "FileList + FileReaderSync",
