@@ -15,5 +15,9 @@ ROUTES = {
     availability: "Show Availability",
     current_position: "Get Current Position",
     watch_position: "Watch Position",
+  }],
+  workers: ["Web Workers", {
+    availability: "Show Availability",
+    prime: "Calculate prime numbers"
   }]
 }
