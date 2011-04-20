@@ -1,0 +1,40 @@
+#filelist-information {
+  margin-top: 20px;
+  
+  ol {
+    margin-top: 30px;
+    list-style: decimal;
+    
+    font-size: 14px;
+    
+    li {
+      line-height: 18px;
+      margin-left: 20px;
+      margin-down: 30px;
+    }
+  }
+  span {
+    display: block;
+    line-height: 22px;
+  }
+  
+  img {
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
+    background: #333;
+    -webkit-box-shadow: 2px 2px 5px #333;
+  }
+  
+  .header {
+    font-weight: bold;
+  }
+  .error {
+    color: #800000;
+  }
+  .file_name {
+  }
+  .file_lastModifiedDate {
+    font-style: italic;
+  }
+}

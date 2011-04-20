@@ -1,0 +1,15 @@
+<p class="instructions">
+  Use the input element below to select multiple files. File information for
+  all selected files will be shown below.<br />
+  Additionally, image and text files will be embedded in this document,
+  without any server interaction, but this time read synchronously.
+</p>
+<div class="failure" id="not-available">
+</div>
+<form action="filelist_submit" method="get" accept-charset="utf-8">
+  <p>
+    <input type="file" id="file-input" multiple />
+  </p>
+</form>
+<div id="filelist-information">
+</div>

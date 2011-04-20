@@ -15,7 +15,7 @@ positionCallback = (positionOptions) ->
       "  timestamp = " + position.timestamp + "\n" +
       "              (" + new Date(position.timestamp).toUTCString() + ")" + "\n" +
       "}")
-    $('#current_position pre.result').slideDown(350)
+    $('#current_position pre.result').slideDown('fast')
     $.ajax({
       type: 'POST',
       url: '/tests/geolocation_api/current_position_transmit',
@@ -33,7 +33,7 @@ positionErrorCallback = (positionOptions) ->
       "  code    = " + error.code + " (" + codes[error.code] + "),\n" +
       "  message = " + error.message + "\n" +
       "}")
-    $('#current_position pre.error').slideDown(350)
+    $('#current_position pre.error').slideDown('fast')
     $.ajax({
       type: 'POST',
       url: '/tests/geolocation_api/current_position_transmit',

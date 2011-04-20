@@ -2,34 +2,22 @@
 # -*- encoding: utf-8 -*-
 
 require 'sinatra'
+require 'sinatra/reloader' if development?
 require 'erb'
 require 'sass'
 require 'coffee-script'
 
 require_relative 'lib/all'
 
-
-TEST_GROUPS = {
-  general: ["General", {
-    js_test: "JavaScript Test",
-  }],
-  capture_api: ["Capture API", {
-    capture: "Capture Interface",
-  }],
-  geolocation_api: ["Geolocation API", {
-    availability: "Show Availability",
-    current_position: "Get Current Position",
-    watch_position: "Watch Position",
-  }]
-}
+require_relative 'lib/routes'
 
 
 def group_name(group)
-  TEST_GROUPS[group.to_sym][0]
+  ROUTES[group.to_sym][0]
 end
 
 def test_name(group, test)
-  TEST_GROUPS[group.to_sym][1][test.to_sym]
+  ROUTES[group.to_sym][1][test.to_sym]
 end
 
 
@@ -55,7 +43,7 @@ end
 
 get '/', :agent => /(.*)/ do
   @iphone = true if /iPhone/.match params[:agent].first
-  @test_groups = TEST_GROUPS
+  @test_groups = ROUTES
   erb :"erb/index"
 end
 
