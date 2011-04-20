@@ -7,5 +7,6 @@ class WorkersController < Controller
   end
   
   def prime_hardcore
+  end
   
 end
