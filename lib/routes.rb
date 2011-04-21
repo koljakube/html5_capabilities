@@ -1,27 +1,28 @@
 ROUTES = {
   general: ["General", {
-    js_test: "JavaScript Test",
-    user_agent: "Submit User Agent",
+    js_test: "JavaScript test",
+    user_agent: "Submit user agent",
   }],
   orientation: ["Device Orientation", {
     display: "Display orientation",
+    accelerometer: "Display accelerometer data"
   }],
   file_api: ['File API', {
     filelist: "FileList + FileReader",
     filereadersync: "FileList + FileReaderSync",
   }],
   capture_api: ["Capture API", {
-    device_availability: "Device Availability",
-    supported_formats: "Supported Formats",
+    device_availability: "Device availability",
+    supported_formats: "Supported formats",
     take_photo: "Take a photo",
   }],
   geolocation_api: ["Geolocation API", {
-    availability: "Show Availability",
-    current_position: "Get Current Position",
-    watch_position: "Watch Position",
+    availability: "Show availability",
+    current_position: "Get current position",
+    watch_position: "Watch position",
   }],
   workers: ["Web Workers", {
-    availability: "Show Availability",
+    availability: "Show availability",
     prime: "Calculate prime numbers",
     prime_hardcore: "Busily calculate prime numbers",
   }]
