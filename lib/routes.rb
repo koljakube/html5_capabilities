@@ -20,6 +20,7 @@ ROUTES = {
     info: "WebStorage Information",
     session: "Session Storage",
     local: "Local Storage",
+    storage_event: "Storage Event",
   }],
   geolocation_api: ["Geolocation API", {
     availability: "Show availability",

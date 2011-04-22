@@ -31,3 +31,30 @@ ol {
     font-style: italic;
   }
 }
+
+input.text {
+  width: 360px;
+  font-size: 18px;
+  line-height: 150%;
+  padding: 10px;
+  border: none;
+  background: #fafaf5;
+  box-shadow: 0px 0px 5px #333;
+}
+.change-log {
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+#localStorage, #sessionStorage, #storage-log {
+  padding-top: 20px;
+}
+
+#storage-log ul {
+  margin-top: 20px;
+  padding-left: 20px;
+  
+  li {
+    line-height: 150%;
+  }
+}
