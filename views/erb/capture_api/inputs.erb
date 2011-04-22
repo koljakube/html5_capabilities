@@ -1,0 +1,18 @@
+<p class="instructions">
+  Every input below should let you input files from various sources (camera,
+  microphone, filesystem, ...)
+</p>
+<div id="inputs">
+  <form action="#" method="post" accept-charset="utf-8">
+    <label for="camera">Camera</label>
+    <input type="file" name="camera" id="camera" accept="image/*" capture="camera" />
+    <label for="camcorder">Camcorder</label>
+    <input type="file" name="camcorder" id="camcorder" accept="video/*" capture="camcorder" />
+    <label for="microphone">Microphone</label>
+    <input type="file" name="microphone" id="microphone" accept="audio/*" capture="microphone" />
+    <label for="filesystem">Filesystem</label>
+    <input type="file" name="filesystem" id="filesystem" accept="*/*" capture="filesystem" />
+
+    <!-- <p><input type="submit" value="Continue &rarr;"></p> -->
+  </form>
+</div>

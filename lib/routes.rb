@@ -14,7 +14,7 @@ ROUTES = {
   capture_api: ["Capture API", {
     device_availability: "Device availability",
     supported_formats: "Supported formats",
-    take_photo: "Take a photo",
+    inputs: "Try out media inputs",
   }],
   web_storage: ["WebStorage", {
     info: "WebStorage Information",
