@@ -19,7 +19,7 @@
 
     <% if production? %>
       <% @javascripts.each do |js| %>
-      <script src="<%= js.sub('javascripts', 'javascript_static') %>" type="text/javascript" charset="utf-8"></script>
+      <script src="<%= js.sub('javascripts', 'javascripts_static') %>" type="text/javascript" charset="utf-8"></script>
       <% end %>
     <% else %>
       <% @javascripts.each do |js| %>
