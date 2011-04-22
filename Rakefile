@@ -49,6 +49,15 @@ task :clean_logs do
   end
 end
 
+desc "Compile all CoffeeScript files into static files"
+task :compile_coffeescript do
+  Dir["views/coffee-script/*/*.coffee"].each do |file|
+    outdir = File.dirname(file.sub("views/coffee-script", "public/javascript_static"))
+    system("coffee -o #{outdir} #{file}")
+  end
+    
+end
+
 task :default do
   system("sleep 1 && open http://0.0.0.0:4567 &")
   system("./server.rb")

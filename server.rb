@@ -97,3 +97,10 @@ end
 get '/javascripts/:group/:test.js' do |group, test|
   coffee :"coffee-script/#{group}/#{test}"
 end
+
+get '/javascripts_static/:file.js' do |file|
+  coffee :"coffee-script/#{file}"
+end
+get '/javascripts_static/:group/:test.js' do |group, test|
+  coffee :"coffee-script/#{group}/#{test}"
+end

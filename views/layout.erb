@@ -16,8 +16,15 @@
     <% @stylesheets.each do |sheet| %>
     <link rel="stylesheet" href="<%= sheet %>" type="text/css" media="screen" />
     <% end %>
-    <% @javascripts.each do |js| %>
-    <script src="<%= js %>" type="text/javascript" charset="utf-8"></script>
+
+    <% if production? %>
+      <% @javascripts.each do |js| %>
+      <script src="<%= js.sub('javascripts', 'javascripts_static') %>" type="text/javascript" charset="utf-8"></script>
+      <% end %>
+    <% else %>
+      <% @javascripts.each do |js| %>
+      <script src="<%= js %>" type="text/javascript" charset="utf-8"></script>
+      <% end %>
     <% end %>
   </head>
   <body>
