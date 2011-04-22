@@ -22,6 +22,9 @@ ROUTES = {
     local: "Local Storage",
     storage_event: "Storage Event",
   }],
+  offline: ["Offline Apps", {
+    check: "Check status",
+  }],
   geolocation_api: ["Geolocation API", {
     availability: "Show availability",
     current_position: "Get current position",
