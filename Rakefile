@@ -51,11 +51,12 @@ end
 
 desc "Compile all CoffeeScript files into static files"
 task :compile_coffeescript do
-  Dir["views/coffee-script/*/*.coffee"].each do |file|
-    outdir = File.dirname(file.sub("views/coffee-script", "public/javascripts_static"))
-    system("coffee -o #{outdir} #{file}")
+  ["views/coffee-script/*.coffee", "views/coffee-script/*/*.coffee"].each do |dir|
+    Dir[dir].each do |file|
+      outdir = File.dirname(file.sub("views/coffee-script", "public/javascripts_static"))
+      system("coffee -o #{outdir} #{file}")
+    end
   end
-    
 end
 
 task :default do
