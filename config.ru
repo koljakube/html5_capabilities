@@ -1,4 +1,3 @@
-require 'bundler/setup'
 require './server'
 
-run Server
+run Sinatra::Application

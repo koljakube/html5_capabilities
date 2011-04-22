@@ -16,6 +16,11 @@ ROUTES = {
     supported_formats: "Supported formats",
     take_photo: "Take a photo",
   }],
+  web_storage: ["WebStorage", {
+    info: "WebStorage Information",
+    session: "Session Storage",
+    local: "Local Storage",
+  }],
   geolocation_api: ["Geolocation API", {
     availability: "Show availability",
     current_position: "Get current position",
