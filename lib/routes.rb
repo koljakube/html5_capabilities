@@ -34,5 +34,8 @@ ROUTES = {
     availability: "Show availability",
     prime: "Calculate prime numbers",
     prime_hardcore: "Busily calculate prime numbers",
+  }],
+  contacts_api: ["Contacts API", {
+    search: "Search contacts",
   }]
 }
