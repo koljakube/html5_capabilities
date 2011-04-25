@@ -2,17 +2,28 @@
   Every input below should let you input files from various sources (camera,
   microphone, filesystem, ...)
 </p>
+<p class="failure">
+  The MediaFile interface seems to be unsupported on your system.
 <div id="inputs">
   <form action="#" method="post" accept-charset="utf-8">
     <label for="camera">Camera</label>
     <input type="file" name="camera" id="camera" accept="image/*" capture="camera" />
+    <pre id="camera-info" class="fileinfo"></pre>
     <label for="camcorder">Camcorder</label>
     <input type="file" name="camcorder" id="camcorder" accept="video/*" capture="camcorder" />
+    <pre id="camcorder-info" class="fileinfo"></pre>
     <label for="microphone">Microphone</label>
     <input type="file" name="microphone" id="microphone" accept="audio/*" capture="microphone" />
+    <pre id="microphone-info" class="fileinfo"></pre>
     <label for="filesystem">Filesystem</label>
     <input type="file" name="filesystem" id="filesystem" accept="*/*" capture="filesystem" />
+    <pre id="filesystem-info" class="fileinfo"></pre>
 
     <!-- <p><input type="submit" value="Continue &rarr;"></p> -->
   </form>
 </div>
+
+<p class="annotations">
+  Only media-file specific information is shown, for generic file information
+  look at the File API tests.
+</p>
