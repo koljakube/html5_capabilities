@@ -42,6 +42,7 @@ ROUTES = {
     ping: "Ping server",
   }],
   web_notifications: ["Web Notifications", {
+    w3c: "W3C Notifications",
     webkit: "WebKit Example",
   }],
 }
