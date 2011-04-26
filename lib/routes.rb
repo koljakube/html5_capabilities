@@ -37,5 +37,8 @@ ROUTES = {
   }],
   contacts_api: ["Contacts API", {
     search: "Search contacts",
-  }]
+  }],
+  web_socket_api: ["WebSocket API", {
+    ping: "Ping server",
+  }],
 }
