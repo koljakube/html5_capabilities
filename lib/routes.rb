@@ -2,6 +2,7 @@ ROUTES = {
   general: ["General", {
     js_test: "JavaScript test",
     user_agent: "Submit user agent",
+    permissions: "List permissions",
   }],
   orientation: ["Device Orientation", {
     display: "Display orientation",

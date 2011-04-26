@@ -12,4 +12,7 @@ class GeneralController < Controller
     end
   end
   
+  def permissions
+  end
+  
 end
