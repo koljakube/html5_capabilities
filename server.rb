@@ -35,6 +35,7 @@ before do
   @javascripts = %w{
     /jquery/jquery-1.5.2.js
     /jquery/jquery.json-2.2.js
+    /jquery/jquery.timers.js
     /javascripts/common.js
   }
   @stylesheets = []
