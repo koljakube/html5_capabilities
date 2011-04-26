@@ -1,9 +1,7 @@
 displayContacts = (contacts) ->
-  for i in contacts
+  for contact in contacts
     $('#contacts ul').append('<li></li>')
-    li = $('#contacts ul li').last()
-      c = contacts[i]
-      li.text("#{c.name.formatted}, #{c.emails[0].value}")
+    $('#contacts ul li').last().text("#{contact.name.formatted}, #{contact.emails[0].value}")
 
 
 handleError = (error) ->
@@ -22,7 +20,7 @@ handleError = (error) ->
 $ ->
   $('.failure').hide()
   
-  if navigator.service and typeof navigator.service.contacts == 'undefined'
+  if not navigator.service or typeof navigator.service.contacts == 'undefined'
     $('.failure').slideDown('fast')
   
   $('#filter').keyup ->
