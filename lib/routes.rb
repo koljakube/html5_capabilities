@@ -41,4 +41,7 @@ ROUTES = {
   web_socket_api: ["WebSocket API", {
     ping: "Ping server",
   }],
+  web_notifications: ["Web Notifications", {
+    webkit: "WebKit Example",
+  }],
 }
