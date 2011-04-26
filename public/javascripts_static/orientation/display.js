@@ -2,12 +2,15 @@
   $(function() {
     $('.failure').hide();
     $('.result').hide();
-    return window.onorientationchange = function() {
-      var orientation;
-      alert("Called!");
-      orientation = window.orientation;
-      $('#orientation-display').text("" + orientation);
-      return $('.result').slideDown('fast');
-    };
+    if (window.orientation != null) {
+      $('.result').slideDown('fast');
+      return window.onorientationchange = function() {
+        var orientation;
+        orientation = window.orientation;
+        return $('#orientation-display').text("" + orientation);
+      };
+    } else {
+      return $('.failure').slideDown('fast');
+    }
   });
 }).call(this);
