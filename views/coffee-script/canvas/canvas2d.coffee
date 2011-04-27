@@ -6,7 +6,7 @@ $ ->
 
   t = 0
   
-  $(document).everyTime(50, do (canvas, t) ->
+  $(document).everyTime 50, do (canvas, t) ->
     ->
       pen = canvas.getContext('2d')
       r = Math.floor(128 * Math.sin(t) + 128)
@@ -15,4 +15,3 @@ $ ->
       pen.fillStyle = "rgb(#{r}, #{g}, #{b})"
       pen.fillRect 0, 0, 260, 260
       t += 0.1
-  )

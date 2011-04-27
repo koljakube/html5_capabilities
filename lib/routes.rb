@@ -48,5 +48,6 @@ ROUTES = {
   }],
   canvas: ["Canvas", {
     canvas2d: "2D drawing",
+    webgl: "WebGL",
   }],
 }

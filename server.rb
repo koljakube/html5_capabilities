@@ -36,10 +36,12 @@ before do
     /jquery/jquery-1.5.2.js
     /jquery/jquery.json-2.2.js
     /jquery/jquery.timers.js
+    /jquery/glMatrix-0.9.5.min.js
     /javascripts/common.js
   }
   @stylesheets = []
   @iphone = false
+  @additional_head_data = ""
 
   instance_eval do
     def page_title
