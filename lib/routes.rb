@@ -46,4 +46,7 @@ ROUTES = {
     w3c: "W3C Notifications",
     webkit: "WebKit Example",
   }],
+  canvas: ["Canvas", {
+    canvas2d: "2D drawing",
+  }],
 }
